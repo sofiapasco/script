@@ -184,7 +184,11 @@ if (poäng[i]===7){
 }
  */
 
-let tal = 5;
+const getRandomNumber = (max = 10) => {
+return Math.ceil( Math.random() * max );
+}
+
+const tal = getRandomNumber ();
 let guess = Number(prompt(`Gissa ett tal (skriv 0 för att avsluta)`));
 
 while (true){	
@@ -194,9 +198,12 @@ while (true){
 	}else if (guess === tal){
 		alert(`Grattis!`);
 		break;
-	} else{
+	} else if(guess > tal) {
+		guess = Number(prompt(`Det är för högt,testa igen`));
+	}else if(guess < tal){
+		guess =Number(prompt(`Det är för lågt, testa igen`));
+	}else{
 		guess = Number(prompt(`Fel svar!Gissa igen`));
 	}
 }
-
 

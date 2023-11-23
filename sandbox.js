@@ -140,8 +140,8 @@ greetUser();*/
  * - eller har minst 16 tecken
  *
  
-*/
-/*
+
+
 
 const passwords = [
 	"password",								// 🚨
@@ -155,10 +155,21 @@ const passwords = [
 	"$$$",									// 🚨
 ];
 
+const specialChars = [
+	"@", "$", "%", "*", "^", "<", ">", "?", "!", "(", ")", "[", "]", "{", "}", "'"
+];
+	
+passwords.forEach((passwords, index) => {
+	console.log(`Lösenordet är: ${passwords} ${index}`)
+});
 
 
 
-for (let i= 0; i <= passwords.length; i++){
+
+
+
+
+for (let i= 0; i <= passwords.length -1; i++){
 	const password = passwords [i];
 	console.log(`Lösen är ${password}`);
 
@@ -182,7 +193,7 @@ if (poäng[i]===7){
 	continue;
 }
 }
- */
+
 
 const getRandomNumber = (max = 10) => {
 return Math.ceil( Math.random() * max );
@@ -207,3 +218,33 @@ while (true){
 	}
 }
 
+const login = document.querySelector(".login");
+const password= document.querySelector("#password");
+
+login.addEventListener("submit", e => {
+	e.preventDefault();
+	alert(password.value)
+	
+});
+
+
+// Arrays aren't (that) suited for grouping related data together since they
+// are index-based and relies on the order of the values
+
+
+
+const fluffles = [
+	"Mr. Fluffles",		// 0 = name
+	3,					// 1 = age
+	"Bengt",			// 2 = owner
+	"Annoy people",		// 3 = hobbies
+	"Cat",				// 4 = species
+];
+
+const captainCat = [
+	"Captain Cat",		// 0 = name
+	"Cat",				// 1 = species
+	9,					// 2 = age
+	"Agda",				// 3 = owner
+	"HIIT",				// 4 = hobbies
+];
